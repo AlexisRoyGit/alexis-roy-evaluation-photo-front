@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me contacter</title>
+    <meta 
+    name="description" 
+    content="Si vous souhaitez me contacter pour me poser des questions, 
+    me faire part de votre avis sur mon travail ou autre, n'hésitez pas à remplir ce formulaire">
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+   <nav class="navigation">
+        <a href="index.html" class="logo-site">
+            <img src="logos/logo-charles-cantin.png" alt="logo-charles-cantin">
+        </a>
+        <a href="#" class="logo instagram">
+            <img src="logos/instagram-logo-mobile.png" alt="logo-instagram">
+        </a>
+        <a href="#" class="logo facebook">
+            <img src="logos/facebook-logo-mobile.png" alt="logo-facebook">
+        </a>
+        <div id="myNav" class="navside">
+            <a href="#" id="closeBtn" class="close">x</a>
+            <ul>
+                <li>
+                    <a href="galerie.html">Galerie</a>
+                </li>
+                <li>
+                    <a href="tarifs.html">Tarifs / Prestations</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <a href="#" id="openBtn" class="burger-menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" viewBox="0 0 16 16">
+                <path 
+                fill-rule="evenodd" 
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+        </a>
+        <a href="galerie.html" class="nav-link galerie hovering">Galerie</a>
+        <a href="tarifs.html" class="nav-link tarifs hovering">Tarifs / Prestations</a>
+        <a href="#" class="nav-link contact">Contact</a>
+   </nav>
+   <h1 class="title">Formulaire de contact</h1>
+   <form action="https://formspree.io/f/mbjeobrv" method="POST">
+        <label for="surname">Votre prénom</label>
+        <input 
+            type="text" 
+            id="surname" 
+            name="prénom" 
+            placeholder="Saisissez votre prénom . . . " 
+            class="border-radius"
+            required
+        >
+
+        <label for="name">Votre nom</label>
+        <input 
+            type="text" 
+            id="name" 
+            name="nom" 
+            placeholder="Saisissez votre nom . . . " 
+            class="border-radius"
+            required
+        >
+
+        <label for="mail">Votre adresse e-mail</label>
+        <input 
+            type="email" 
+            id="mail" 
+            name="email" 
+            placeholder="Saisissez votre mail . . . " 
+            class="border-radius"
+            required
+        >
+
+        <label for="object">Objet</label>
+        <input 
+            type="text" 
+            id="object" 
+            name="objet" 
+            placeholder="Objet de votre message . . . " 
+            class="border-radius"
+            required
+        >
+
+        <label for="message">Sujet</label>
+        <textarea 
+            rows="5" 
+            cols="22" 
+            name="textarea" 
+            id="message" 
+            placeholder="Saisissez votre message . . ."
+            class="border-radius"
+            required
+        ></textarea>
+        
+        <button type="submit">Envoyer</button> 
+   </form>   
+   <script src="js/main.js"></script>
+   <noscript>Un problème est survenu, vérifiez que vous prenez bien en compte les scripts javascript</noscript>
+</body>
+</html>

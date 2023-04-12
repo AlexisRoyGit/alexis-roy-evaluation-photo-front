@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;    
+    color: #000;
+}
+
+/*Barre de Navigation*/
+.navigation {
+    display: grid;
+    grid-template: 4rem / 1fr 1fr 1fr;
+    background-color: #FF8C61;
+}
+
+/*Logo du site dans la barre de navigation*/
+.logo-site {
+    grid-row: 1 / 1;
+    grid-column: 2 / 2;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    height: 3.7rem;
+    width: 3.7rem;
+}
+
+.logo-site > img {
+    border-radius: 50%;
+}
+
+/*Styles communs aux logos instagram et facebook*/
+.logo {
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+    display: flex;
+    align-self: center;
+    height: 2rem;
+    width: 2rem;
+}
+
+/*Logo instagram*/
+.instagram {
+    margin-left: 0.5rem;
+}
+
+/*Logo facebook*/
+.facebook {
+    justify-self: right;
+    margin-right: 0.5rem;
+}
+
+/*CSS du menu latéral en mobile*/
+.navside {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: -250px;
+    padding-top: 60px;
+    width: 250px;
+    height: 100%;
+    background: #383D3B;
+    transition: right ease 0.3s;
+}
+
+/*Liens du menu latéral mobile*/
+.navside a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 25px;
+    transition: 0.3s;
+}
+
+/*Liste de liens du menu latéral mobile*/
+.navside ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/*CSS utilisé pour le deploiement du menu latéral mobile au clic sur l'icône*/
+.navside.active{
+    right: 0;
+}
+
+/*CSS du bouton de fermeture du menu latéral mobile*/
+.navside .close {
+    position: absolute;
+    top: 5px;
+    right: 25px;
+    font-size: 40px;
+}
+
+/*Bouton pour le deploiement du menu latéral mobile*/
+.burger-menu {
+    grid-row: 1 / 1;
+    grid-column: 3 / 3;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+}
+
+.burger-menu > svg {
+    height: 60px;
+    width: 60px;
+}
+
+/*Masquage des liens de navigation en desktop*/
+.nav-link {
+    display: none;
+}
+
+/*Layout de corps de la page + mise en place du background*/
+main {
+   display: grid;
+   grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+   height: 90vh;
+   background-image: url('../images/adult-g38cc316c3_1280.jpg');
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+/*Placement du titre de premier niveau*/
+.title {
+    grid-row: 2 / 2;
+    grid-column: 2 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Passage de la version mobile à la version tablette/desktop (remplacement du menu latéral mobile
+en un menu de navigation classique) 
+*/
+@media screen and (min-width : 650px) {
+    /*Augmentation des dimensions de la barre de navigation, des logos ainsi que la modification de leur placement*/
+    .title {
+        font-size: 25px;
+    }
+
+    .navigation {
+        grid-template: 5.1rem / 15% 1fr 20%;
+    }
+
+    .logo {
+        grid-row: 1 / 1;
+        grid-column: 3 / 3;
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+
+    .logo-site {
+        grid-row: 1 / 1;
+        grid-column: 1 / 1;
+        height: 4.8rem;
+        width: 4.8rem;
+    }
+
+    /*Disparition du bouton du menu latéral mobile*/
+    .burger-menu {
+        display: none;
+    }
+
+    /*Apparition et placement des nouveaux liens de navigation ainsi que leur style*/   
+    .nav-link {
+        grid-row: 1 / 1;
+        grid-column: 2 / 2;
+        text-decoration: none;
+        font-size: 25px;
+        font-weight: bold;
+        color: #820101;
+    }
+
+    .galerie {
+        display: flex;
+        align-self: center;
+        justify-self: left;
+        margin-left: 1rem;
+    }
+
+    .tarifs {
+        display: flex;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .contact {
+        display: flex;
+        align-self: center;
+        justify-self: right;
+        margin-right: 1rem;
+    }
+
+    .hovering:hover {
+        text-decoration: underline;
+    }
+}
+
+/*Recentrage des logos et liens de la barre de navigation*/
+@media screen and (min-width : 1250px) {
+    .instagram {
+        margin-left: 3rem;
+    }
+
+    .facebook {
+        margin-right: 3rem;
+    }
+
+    .galerie {
+        margin-left: 3.5rem;
+    }
+
+    .contact {
+        margin-right: 3.5rem;
+    }
+}

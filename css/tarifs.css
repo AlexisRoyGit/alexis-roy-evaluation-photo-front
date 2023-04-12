@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;    
+    background: #FFEFBA;
+    color: #383D3B;
+}
+
+/*Barre de Navigation*/
+.navigation {
+    display: grid;
+    grid-template: 5rem / 1fr 1fr 1fr;
+    background-color: #FF8C61;
+}
+
+/*Logo du site dans la barre de navigation*/
+.logo-site{
+    grid-row: 1 / 1;
+    grid-column: 2 / 2;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    height: 4.6rem;
+    width: 4.6rem;
+}
+
+.logo-site > img {
+    border-radius: 50%;
+}
+
+/*Styles communs aux logos instagram et facebook*/
+.logo{
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+    display: flex;
+    align-self: center;
+    height: 2.8rem;
+    width: 2.8rem;
+}
+
+/*Logo instagram*/
+.instagram{
+    margin-left: 0.5rem;
+}
+
+/*Logo facebook*/
+.facebook{
+    justify-self: right;
+    margin-right: 0.5rem;
+}
+
+/*CSS du menu latéral en mobile*/
+.navside {
+    position: fixed;
+    right: -250px;
+    top: 0;
+    padding-top: 60px;
+    z-index: 1;
+    width: 250px;
+    height: 100%;
+    background: #383D3B;
+    transition: right ease 0.3s;
+}
+
+/*Liens du menu latéral mobile*/
+.navside a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 25px;
+    transition: 0.3s;
+}
+
+/*Liste de liens du menu latéral mobile*/
+.navside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/*CSS utilisé pour le deploiement du menu latéral mobile au clic sur l'icône*/
+.navside.active {
+    right: 0;
+}
+
+/*CSS du bouton de fermeture du menu latéral mobile*/
+.navside .close {
+    position: absolute;
+    top: 5px;
+    right: 25px;
+    font-size: 40px;
+}
+
+/*Bouton pour le deploiement du menu latéral mobile*/
+.burger-menu {
+    grid-row: 1 / 1;
+    grid-column: 3 / 3;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+}
+
+.burger-menu > svg {
+    height: 60px;
+    width: 60px;
+}
+
+/*Masquage des liens de navigation en desktop*/
+.nav-link {
+    display: none;
+}
+
+/*CSS du titre de premier niveau*/
+.title {
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/*CSS de la liste des tarifs*/
+.list {
+    list-style: none;
+    padding: 0;
+}
+
+.list li {
+    margin-top: 2.5rem;
+}
+
+.list li::before {
+    content: "📷";
+}
+
+span {
+    font-weight: bold;
+    font-style: italic;
+}
+
+/*Passage de la version mobile à la version tablette/desktop (remplacement du menu latéral mobile
+en un menu de navigation classique) 
+*/
+@media screen and (min-width : 650px) {
+     /*Augmentation des dimensions de la barre de navigation,des logos ainsi que la modification de leur placement*/
+    .title {
+        font-size: 25px;
+    }
+
+    .navigation {
+        grid-template: 6.4rem / 15% 1fr 20%;
+    }
+
+    .logo {
+        grid-row: 1 / 1;
+        grid-column: 3 / 3;
+        height: 3.2rem;
+        width: 3.2rem;
+    }
+
+    .logo-site {
+        grid-row: 1 / 1;
+        grid-column: 1 / 1;
+        height: 6rem;
+        width: 6rem;
+    }
+
+    /*Disparition du bouton du menu latéral mobile*/
+    .burger-menu {
+        display: none;
+    }
+
+    /*Apparition et placement des nouveaux liens de navigation ainsi que leur style*/   
+    .nav-link {
+        grid-row: 1 / 1;
+        grid-column: 2 / 2;
+        text-decoration: none;
+        color: #820101;
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    .galerie {
+        display: flex;
+        align-self: center;
+        justify-self: left;
+        margin-left: 1rem;
+    }
+
+    .tarifs {
+        display: flex;
+        align-self: center;
+        justify-self: center;
+        color: #383D3B;
+        cursor: default;
+    }
+
+    .contact {
+        display: flex;
+        align-self: center;
+        justify-self: right;
+        margin-right: 1rem;
+    }
+
+    .hovering:hover {
+        text-decoration: underline;
+    }
+}
+
+/*Augmentation des dimensions de la page*/
+@media screen and (min-width : 768px)  {
+    body {
+        font-size: 25px;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .list li {
+        margin-left: 10px;
+    }
+}
+
+/*Recentrage des logos et liens de la barre de navigation*/
+@media screen and (min-width : 1250px) {
+    .instagram {
+        margin-left: 3.7rem;
+    }
+
+    .facebook {
+        margin-right: 3.7rem;
+    }
+
+    .galerie {
+        margin-left: 4.4rem;
+    }
+
+    .contact {
+        margin-right: 4.4rem;
+    }
+}

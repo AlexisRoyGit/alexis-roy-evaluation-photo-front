@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #FFEFBA;
+}
+
+* {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;    
+    color: #383D3B;
+}
+
+/*Barre de Navigation*/
+.navigation {
+    display: grid;
+    grid-template: 4.7rem / 1fr 1fr 1fr;
+    background-color: #FF8C61;
+}
+
+/*Logo du site dans la barre de navigation*/
+.logo-site {
+    grid-row: 1 / 1;
+    grid-column: 2 / 2;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    height: 4.4rem;
+    width: 4.4rem;
+}
+
+.logo-site > img {
+    border-radius: 50%;
+}
+
+/*Styles communs aux logos instagram et facebook*/
+.logo {
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+    display: flex;
+    align-self: center;
+    height: 2.6rem;
+    width: 2.6rem;
+}
+
+/*Logo instagram*/
+.instagram {
+    margin-left: 0.5rem;
+}
+
+/*Logo facebook*/
+.facebook {
+    justify-self: right;
+    margin-right: 0.5rem;
+}
+
+/*CSS du menu latéral en mobile*/
+.navside {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    z-index: 1;
+    right: -250px;
+    top: 0;
+    padding-top: 60px;
+    background: #383D3B;
+    transition: right ease 0.3s;
+}
+
+/*Liens du menu latéral mobile*/
+.navside a {
+    display: block;
+    padding: 15px;
+    font-size: 25px;
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+/*Liste de liens du menu latéral mobile*/
+.navside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/*CSS utilisé pour le deploiement du menu latéral mobile au clic sur l'icône*/
+.navside.active {
+    right: 0;
+}
+
+/*CSS du bouton de fermeture du menu latéral mobile*/
+.navside .close {
+    position: absolute;
+    top: 5px;
+    right: 25px;
+    font-size: 40px;
+}
+
+/*Bouton pour le deploiement du menu latéral mobile*/
+.burger-menu {
+    grid-row: 1 / 1;
+    grid-column: 3 / 3;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    height: 3.5rem;
+    width: 3.5rem;
+}
+
+.burger-menu > svg {
+    height: 60px;
+    width: 60px;
+}
+
+/*Masquage des liens de navigation en desktop*/
+.nav-link {
+    display: none;
+}
+
+/*Style du titre de premier niveau*/
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*Placement et style des boutons radios*/
+form {
+    display:inline-block;
+    width: 100%;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+input {
+    cursor: pointer;
+}
+
+/*CSS de la galerie responsive*/
+article {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    justify-content: center;
+}
+
+section {
+    height: 15rem;
+    width: 15rem;
+    margin: 20px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+}
+
+/*Style des images de la galerie au survol*/
+section:hover {
+    box-shadow: #383D3B 5px 5px 15px, #383D3B -5px -5px 15px;
+}
+
+/*Classe ajoutée dynamiquement aux images selon la catégorie choisie par l'utilisateur*/
+.display-none {
+    display: none;
+}
+
+/*Augmentation de la taille des images*/
+@media screen and (min-width : 450px) {
+    section {
+        height: 20rem;
+        width: 20rem;
+    }
+}
+
+/*Passage de la version mobile à la version tablette/desktop (remplacement du menu latéral mobile
+en un menu de navigation classique) 
+*/
+@media screen and (min-width : 650px) {
+    /*Augmentation des dimensions de la barre de navigation,des logos ainsi que la modification de leur placement*/
+    .title {
+        font-size: 25px;
+    }
+
+    .navigation {
+        grid-template: 6rem / 15% 1fr 20%;
+    }
+
+    .logo {
+        grid-row: 1 / 1;
+        grid-column: 3 / 3;
+        height: 3rem;
+        width: 3rem;
+    }
+
+    .logo-site {
+        grid-row: 1 / 1;
+        grid-column: 1 / 1;
+        height: 5.6rem;
+        width: 5.6rem;
+    }
+
+    /*Disparition du bouton du menu latéral mobile*/
+    .burger-menu {
+        display: none;
+    }
+
+     /*Apparition et placement des nouveaux liens de navigation ainsi que leur style*/
+    .nav-link {
+        grid-row: 1 / 1;
+        grid-column: 2 / 2;
+        text-decoration: none;
+        font-size: 25px;
+        font-weight: bold;
+        color: #820101;
+    }
+
+    .galerie {
+        display: flex;
+        align-self: center;
+        justify-self: left;
+        margin-left: 1rem;
+        color: #383D3B;
+        cursor: default;
+    }
+
+    .tarifs {
+        display: flex;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .contact {
+        display: flex;
+        align-self: center;
+        justify-self: right;
+        margin-right: 1rem;
+    }
+
+    .hovering:hover {
+        text-decoration: underline;
+    }
+}
+
+/*Augmentation de la taille des boutons radio*/
+@media screen and (min-width : 800px) {
+    input {
+        padding: 2rem;
+        margin-left: 2.5rem;
+    }
+
+    label {
+        font-size: 20px;
+    }
+}
+
+
+/*Recentrage des logos et liens de la barre de navigation*/
+@media screen and (min-width : 1250px) {
+    .instagram {
+        margin-left: 3.5rem;
+    }
+
+    .facebook {
+        margin-right: 3.5rem;
+    }
+
+    .galerie {
+        margin-left: 4.1rem;
+    }
+
+    .contact {
+        margin-right: 4.1rem;
+    }
+}

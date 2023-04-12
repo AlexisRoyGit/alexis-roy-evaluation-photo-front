@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #FFEFBA;  
+    text-align: center;
+}
+
+* {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px; 
+    color: #383D3B;
+}
+
+/*Barre de Navigation*/
+.navigation {
+    display: grid;
+    grid-template: 4.7rem / 1fr 1fr 1fr;
+    background-color: #FF8C61;
+}
+
+/*Logo du site dans la barre de navigation*/
+.logo-site {
+    grid-row: 1 / 1;
+    grid-column: 2 / 2;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    height: 4.4rem;
+    width: 4.4rem;
+}
+
+.logo-site > img {
+    border-radius: 50%;
+}
+
+/*Styles communs aux logos instagram et facebook*/
+.logo {
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+    display: flex;
+    align-self: center;
+    height: 2.6rem;
+    width: 2.6rem;
+}
+
+/*Logo instagram*/
+.instagram {
+    margin-left: 0.5rem;
+}
+
+/*Logo facebook*/
+.facebook {
+    justify-self: right;
+    margin-right: 0.5rem;
+}
+
+/*CSS du menu latéral en mobile*/
+.navside {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    padding-top: 60px;
+    z-index: 1;
+    width: 250px;
+    height: 100%;
+    text-align: left;
+    background: #383D3B;
+    transition: right ease 0.3s;
+}
+
+/*Liens du menu latéral mobile*/
+.navside a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #FFF;
+    transition: 0.3s;
+}
+
+/*Liste de liens du menu latéral mobile*/
+.navside ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*CSS utilisé pour le deploiement du menu latéral mobile au clic sur l'icône*/
+.navside.active {
+    right: 0;
+}
+
+/*CSS du bouton de fermeture du menu latéral mobile*/
+.navside .close {
+    position: absolute;
+    top: 5px;
+    right: 25px;
+    font-size: 40px;
+}
+
+/*Bouton pour le deploiement du menu latéral mobile*/
+.burger-menu {
+    grid-row: 1 / 1;
+    grid-column: 3 / 3;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+}
+
+.burger-menu > svg {
+    height: 60px;
+    width: 60px;
+}
+
+/*Masquage des liens de navigation en desktop*/
+.nav-link {
+    display: none;
+}
+
+/*CSS du titre de premier niveau*/
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 1.2rem 0 2rem 0;
+}
+
+/*Placement, style et dimensions des elements du formulaire*/
+input, label, textarea {
+    display: block;
+    width: 80%;
+    margin-left: 5px;
+    text-align: left;
+    resize: none;
+}
+
+input, textarea {
+    margin: 0.5rem 0 1rem 0.5rem;
+    box-shadow: #383D3B 0 3px 10px;
+}
+
+.border-radius {
+    border-radius: 15px;
+}
+
+input {
+    height: 2.5rem;
+}
+
+label {
+    font-style: italic;
+    letter-spacing: 0.1rem;
+}
+
+/*CSS du bouton de soumission du formulaire*/
+button {
+    display: block;
+    padding: 0.5rem;
+    width: 5.5rem;
+    margin-left: 0.5rem;
+    font-size: 20px;
+    text-align: center;
+    color: #000;
+    background: #FFF;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #000;
+    color: #FFF;
+}
+
+
+/*Passage de la version mobile à la version tablette/desktop (remplacement du menu latéral mobile
+en un menu de navigation classique) 
+*/
+@media screen and (min-width : 650px) {
+    /*Augmentation des dimensions de la barre de navigation,des logos ainsi que la modification de leur placement*/
+    .title {
+        font-size: 25px;
+    }
+    .navigation {
+        grid-template: 6rem / 15% 1fr 20%;
+    }
+    .logo {
+        grid-row: 1 / 1;
+        grid-column: 3 / 3;
+        height: 3rem;
+        width: 3rem;
+    }
+    .logo-site {
+        grid-row: 1 / 1;
+        grid-column: 1 / 1;
+        height: 5.7rem;
+        width: 5.7rem;
+    }
+    /*Disparition du bouton du menu latéral mobile*/
+    .burger-menu {
+        display: none;
+    }
+    /*Apparition et placement des nouveaux liens de navigation ainsi que leur style*/
+    .nav-link {
+        grid-row: 1 / 1;
+        grid-column: 2 / 2;
+        font-size: 25px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #820101;
+    }
+    .galerie {
+        display: flex;
+        align-self: center;
+        justify-self: left;
+        margin-left: 1rem;
+    }
+    .tarifs {
+        display: flex;
+        align-self: center;
+        justify-self: center;
+    }
+    .contact {
+        display: flex;
+        align-self: center;
+        justify-self: right;
+        margin-right: 1rem;
+        color: #383D3B;
+        cursor: default;
+    }
+    .hovering:hover {
+        text-decoration: underline;
+    }
+}
+
+/*Gestion du responsive du formuaire*/
+@media screen and (min-width : 650px) {
+    .title, label {
+        font-size: 25px;
+    }
+    input, label, textarea {
+        display: inline-block;
+        width: 50%;
+    }
+    button {
+        position: relative;
+        left: 44%;
+        margin-bottom: 2rem;
+    }
+}
+
+/*Replacement du bouton*/
+@media screen and (min-width : 1220px) {
+    button {
+        left: 46%;
+    }
+}
+
+/*Recentrage des logos et liens de la barre de navigation*/
+@media screen and (min-width : 1250px) {
+    .instagram {
+        margin-left: 3.5rem;
+    }
+    .facebook {
+        margin-right: 3.5rem;
+    }
+    .galerie {
+        margin-left: 4.1rem;
+    }
+    .contact {
+        margin-right: 4.1rem;
+    }
+}
