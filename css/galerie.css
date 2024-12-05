@@ -164,7 +164,7 @@ section:hover {
 }
 
 /*Classe ajoutée dynamiquement aux images selon la catégorie choisie par l'utilisateur*/
-.display-none {
+.undisplayed {
     display: none;
 }
 
